@@ -1,8 +1,16 @@
 import CardProduto from "./CardProduto";
 
-function ListaProdutos({ listaProdutos }) {
+function ListaProdutos({ listaProdutos, onClick }) {
 
-    const produtos = listaProdutos.map((produto) => <CardProduto key={produto.id} produto={ produto } /> );
+    const produtos = listaProdutos.map(
+        (produto) => (
+            <CardProduto
+                key={produto.id}
+                produto={produto}
+                onClick={onClick}
+            />
+        )
+    );
 
     return (
         <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
